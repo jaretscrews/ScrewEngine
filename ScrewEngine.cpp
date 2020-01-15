@@ -1,40 +1,30 @@
-﻿// Example program:
-// Using SDL2 to create an application window
+#include "ScrewEngine.h"
+#include <memory>
 
-#include "SDL.h"
-#include <stdio.h>
+namespace SE
+{
+	// On creation of the engine we init sdl
+	ScrewEngine::ScrewEngine() : window()
+	{
+		SDL_Init(SDL_INIT_VIDEO);
+	}
 
-int main(int argc, char* argv[]) {
+	// On destruction we delete everythnig for sdl
+	ScrewEngine::~ScrewEngine()
+	{
+		SDL_Quit();
+	}
 
-    SDL_Window* window;                    // Declare a pointer
+	// Create the window
+	void ScrewEngine::CreateWindow()
+	{
+		this->window = std::make_unique<ScrewWindow>();
+	}
 
-    SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
+	// The main game loop plans to add a state system where each state will have their own loop.
+	void ScrewEngine::GameLoop()
+	{
+		SDL_Delay(3000);  // Pause execution for 3000 milliseconds, for example
+	}
 
-    // Create an application window with the following settings:
-    window = SDL_CreateWindow(
-        "An SDL2 window",                  // window titlez
-        SDL_WINDOWPOS_UNDEFINED,           // initial x position
-        SDL_WINDOWPOS_UNDEFINED,           // initial y position
-        640,                               // width, in pixels
-        480,                               // height, in pixels
-        SDL_WINDOW_OPENGL                  // flags - see below
-    );
-
-    // Check that the window was successfully created
-    if (window == NULL) {
-        // In the case that the window could not be made...
-        printf("Could not create window: %s\n", SDL_GetError());
-        return 1;
-    }
-
-    // The window is open: could enter program loop here (see SDL_PollEvent())
-
-    SDL_Delay(3000);  // Pause execution for 3000 milliseconds, for example
-
-    // Close and destroy the window
-    SDL_DestroyWindow(window);
-
-    // Clean up
-    SDL_Quit();
-    return 0;
 }

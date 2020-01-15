@@ -3,6 +3,22 @@
 
 #pragma once
 
-#include <iostream>
+#include "ScrewWindow.h"
+#include <memory>
+
+namespace SE
+{
+	class ScrewEngine
+	{
+	public:
+		ScrewEngine();
+		~ScrewEngine();
+
+		void CreateWindow();
+		void GameLoop();
+	private:
+		std::unique_ptr<ScrewWindow> window;
+	};
+}
 
 // TODO: Reference additional headers your program requires here.
