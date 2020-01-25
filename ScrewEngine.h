@@ -4,6 +4,7 @@
 #pragma once
 
 #include "ScrewWindow.h"
+#include "ScrewGraphicsManager.h"
 #include <memory>
 
 namespace SE
@@ -16,8 +17,10 @@ namespace SE
 
 		void CreateWindow();
 		void GameLoop();
+		void InitGraphics();
 	private:
 		std::unique_ptr<ScrewWindow> window;
+		ScrewGraphicsManager graphicsManager;
 	};
 }
 

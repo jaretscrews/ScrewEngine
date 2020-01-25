@@ -27,4 +27,12 @@ namespace SE
 		SDL_Delay(3000);  // Pause execution for 3000 milliseconds, for example
 	}
 
+	// Load the needed graphics
+	void ScrewEngine::InitGraphics()
+	{
+		this->graphicsManager.LoadGraphics("test");
+		this->graphicsManager.LoadGraphics("test");
+		this->graphicsManager.LoadGraphics("test");
+	}
+
 }

@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
     SE::ScrewEngine engine;
 
     engine.CreateWindow();
-
+    engine.InitGraphics();
     engine.GameLoop();
 
     // Clean up
