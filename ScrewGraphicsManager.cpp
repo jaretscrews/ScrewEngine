@@ -20,7 +20,7 @@ namespace SE
 		if (this->graphics.count(key) == 0)
 		{
 			// If we don't load it
-			this->graphics.insert({ key, std::make_shared<ScrewGraphics>() });
+			this->graphics.insert({ key, std::make_shared<ScrewGraphics>(key) });
 		}
 
 		return true;

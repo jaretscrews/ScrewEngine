@@ -15,7 +15,7 @@ endif()
 
 # Define executable target
 include_directories(${SDL2_INCLUDE_DIRS} ${SDL2main_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR} ${CMAKE_BINARY_DIR})
-add_executable(ScrewEngine main.cpp ScrewEngine.cpp ScrewWindow.cpp ScrewGraphics.cpp ScrewGraphicsManager.cpp)
+add_executable(ScrewEngine main.cpp lodepng.cpp ScrewEngine.cpp ScrewWindow.cpp ScrewGraphics.cpp ScrewGraphicsManager.cpp)
 target_link_libraries(ScrewEngine ${SDL2_LIBS} ${OPENGL_LIBRARIES})
 
 # Copy SDL2 DLLs to output folder on Windows

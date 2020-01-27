@@ -30,9 +30,7 @@ namespace SE
 	// Load the needed graphics
 	void ScrewEngine::InitGraphics()
 	{
-		this->graphicsManager.LoadGraphics("test");
-		this->graphicsManager.LoadGraphics("test");
-		this->graphicsManager.LoadGraphics("test");
+		this->graphicsManager.LoadGraphics("C:\\Users\\jaret\\source\\repos\\ScrewEngine\\assets\\test.png");
 	}
 
 }
